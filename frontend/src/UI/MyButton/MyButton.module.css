@@ -1,0 +1,15 @@
+.MyBtn {
+    display: block;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+form > .MyBtn  {
+    margin: 0 auto;
+    margin-top: 35px;
+}

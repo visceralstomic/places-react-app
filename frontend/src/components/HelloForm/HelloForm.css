@@ -1,0 +1,14 @@
+.form-title {
+    font-size: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+
+.hello-form {
+    padding-top: 35px;
+    width: 40%;
+}
+

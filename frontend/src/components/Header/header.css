@@ -1,0 +1,21 @@
+
+.header {
+    background-color: var(--black-color);
+    padding: var(--header-padding) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: var(--logo-font-size);
+}

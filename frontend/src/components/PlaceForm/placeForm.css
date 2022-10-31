@@ -1,0 +1,23 @@
+#place-file-picture {
+    display: none;
+}
+
+
+.picture-label {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+    border: 1px dashed var(--trans-white);
+    padding: 15px 0;
+    border-radius: 10px;
+    transition: .3s linear;
+}
+
+.picture-label:hover {
+    background-color: var(--trans-grey);
+}
+
+#place-rating-input, #place-description-input {
+    margin-top: 10px;
+}

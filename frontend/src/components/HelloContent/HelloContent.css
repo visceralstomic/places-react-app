@@ -1,0 +1,20 @@
+
+.hello-title {
+    font-size: 65px;
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.hello-content {
+    width: 60%;
+}
+
+.hello-info > p {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.hello-info > p:not(:last-child) {
+    margin-bottom: 15px;
+}

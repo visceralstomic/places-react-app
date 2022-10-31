@@ -1,0 +1,10 @@
+
+.myTextarea {
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid var(--trans-white);
+    width: 100%;
+    height: 100px;
+    color: white;
+    font-size: 18px;
+}

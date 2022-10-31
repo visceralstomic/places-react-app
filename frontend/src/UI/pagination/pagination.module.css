@@ -1,0 +1,22 @@
+
+.pageWrap {
+    margin-bottom: 25px;
+}
+
+.pageItem {
+    display: inline-block;
+    padding: 5px;
+    background-color: var(--black-color);
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.pageItem:not(:first-child) {
+    border-left: none;
+}
+
+.pageItemActive {
+    color: var(--black-color);
+    background-color: white;
+}

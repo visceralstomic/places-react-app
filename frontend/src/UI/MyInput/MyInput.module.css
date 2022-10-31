@@ -1,0 +1,17 @@
+
+.MyInp {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--trans-white);
+    margin-top: 10px;
+    transition: .3s all;
+}
+
+.MyInp:hover {
+    border-bottom: 1px solid #fff;
+}

@@ -1,0 +1,14 @@
+.success, .formError {
+    padding: 15px 0;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.success {
+    background-color: #21BF73;
+}
+
+.formError {
+    background-color: #EB1D36;
+}
