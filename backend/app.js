@@ -3,7 +3,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require("cors");
-
+const cookieParser = require('cookie-parser');
 
 const userRouter = require("./routes/userRouter");
 const placeRouter = require("./routes/placeRouter");
@@ -18,8 +18,10 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, 'public')))
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
-
-app.use(cors());
+app.use(cookieParser());
+app.use(cors({
+    credentials: true, origin: 'http://localhost:3000'
+}));
 
 app.use("/user", userRouter);
 app.use("/places", isAuth, placeRouter);

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
-import { UserContext } from "../../context/userContext";
+import { UserContext } from "../../context/userContext"
+import userServise from "../../service/userServise";
 import "./header.css";
 
 
@@ -11,9 +12,15 @@ const Header = props => {
     const navigate = useNavigate();
 
     const logout = () => {
-        setIsAuth(false);
-        localStorage.removeItem('token');
-        navigate("/")
+        userServise
+            .logout()
+            .then(data => {
+                setIsAuth(false);
+                localStorage.removeItem('token');
+                navigate("/")
+            })
+            .catch(error => console.log(error))
+        
     }
 
     return (

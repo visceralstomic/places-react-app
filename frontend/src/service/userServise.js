@@ -1,5 +1,5 @@
-import axiosInstance from "./axiosInstance"
-
+import axiosInstance, {API_URL} from "./axiosInstance"
+import axios from "axios";
 
 const register = data => {
     const req = axiosInstance.post('/user/register', data);
@@ -11,12 +11,13 @@ const login = data => {
     return req.then(resp => resp.data)
 }
 
+const logout = () => {
+    const req = axiosInstance.post('/user/logout');
+    return req.then(resp => resp.data)
+}
+
 const verify = () => {
-    const req = axiosInstance.get('/user/verify', {
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-    })
+    const req = axios.get(`${API_URL}/user/refresh`, {withCredentials: true} )
 
     return req.then(response => response.data);
 }
@@ -25,5 +26,6 @@ const verify = () => {
 export default {
     register,
     login,
+    logout,
     verify
 }

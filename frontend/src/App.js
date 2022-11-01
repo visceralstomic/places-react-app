@@ -17,10 +17,11 @@ function App() {
     if (localStorage.getItem('token')) {
       userServise
         .verify()
-        .then(({user}) => {
+        .then(({token, user}) => {
           
           setIsAuth(true);
           setUser(user);
+          localStorage.setItem('token', token)
           setIsLoading(false)
         })
         .catch(error => {

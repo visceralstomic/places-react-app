@@ -18,8 +18,7 @@ const LoginPage = props => {
             .login({email, password})
             .then(data => {
                 const {user, token} = data;
-                localStorage.setItem("token", token)
-                localStorage.setItem("username", user.username)
+                localStorage.setItem("token", token);
                 setIsAuth(true)
                 navigate("/")
             })

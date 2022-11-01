@@ -15,6 +15,8 @@ module.exports = function(error, req, res, next) {
             }
             
             return res.status(400).json({errors: mongoErrorData});
+        case "JsonWebTokenError":
+            return res.status(401).json({errors: 'invalid token'})
     }
     
     next(error)
