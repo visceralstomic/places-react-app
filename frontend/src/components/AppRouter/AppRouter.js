@@ -29,6 +29,7 @@ const AppRouter = props => {
                                     exact={route.exact}                                
                                 />
                     })}
+                    
                 </Routes>
             ) : (
                 <Routes>

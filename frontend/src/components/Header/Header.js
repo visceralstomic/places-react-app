@@ -36,7 +36,7 @@ const Header = props => {
                     <div>
                        
                        {isAuth ? (
-                        <div>
+                        <div className="user-info">
                             <span>
                                 {user.username}
                             </span>

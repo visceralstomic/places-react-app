@@ -12,3 +12,9 @@
     width: 40%;
 }
 
+
+@media screen and (max-width: 768px) {
+    .hello-form  {
+        width: 100%;
+    }
+}

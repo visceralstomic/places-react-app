@@ -10,6 +10,12 @@
     width: 60%;
 }
 
+@media screen and (max-width: 768px) {
+    .hello-content {
+        width: 100%;
+    }
+}
+
 .hello-info > p {
     font-size: 18px;
     letter-spacing: 1.5px;

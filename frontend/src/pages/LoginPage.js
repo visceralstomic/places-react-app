@@ -4,12 +4,14 @@ import MyInput from "../UI/MyInput/MyInput";
 import userService from "../service/userServise";
 import { AuthContext } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
+import Notification from "../components/Notification/Notification";
 
 
 const LoginPage = props => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loginError, setLoginError] = useState(null);
     const navigate = useNavigate();
 
     const submit = event => {
@@ -22,7 +24,13 @@ const LoginPage = props => {
                 setIsAuth(true)
                 navigate("/")
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                const errorData = err.response.data.error;
+                setLoginError( <div >{errorData}</div>);
+                setTimeout(() => {
+                    setLoginError(null)
+                }, 7000)
+            })
     }
 
     return (
@@ -35,6 +43,9 @@ const LoginPage = props => {
                         type="email" placeholder="Enter email"/>
                     <MyInput  value={password} onChange={e => setPassword(e.target.value)}
                         type="password" placeholder="Enter password" />
+
+                    <Notification message={loginError} msgType="formError" />
+
                     <MyButton>
                         Login
                     </MyButton>

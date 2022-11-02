@@ -62,7 +62,7 @@ const getAllPlaces = (req, res, next) => {
 
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || itemsPerPage;
-    const skip = (page - 1) * itemsPerPage;
+    const skip = (page - 1) * limit;
 
     resultedList = resultedList.skip(skip).limit(limit);
 

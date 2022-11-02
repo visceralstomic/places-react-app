@@ -9,8 +9,10 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(config => config, async error => {
     
+
     const originalReq = error.config;
-    if (error.response.status === 401 ) {
+    if (error.response.status === 401 && error.config && !originalReq._isRetry) {
+        originalReq._isRetry = true;
         try {
             const resp = await axios.get(`${API_URL}/user/refresh`, {withCredentials: true} );
             localStorage.setItem('token', resp.data.token);
@@ -19,6 +21,7 @@ axiosInstance.interceptors.response.use(config => config, async error => {
             console.log(e);
         } 
     }
+    throw error;
 })
 
 export {API_URL};

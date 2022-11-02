@@ -19,3 +19,20 @@
     font-weight: 900;
     font-size: var(--logo-font-size);
 }
+
+.user-info span:first-child {
+    margin-right: 15px;
+}
+
+
+@media screen and (max-width: 460px) {
+    :root {
+        --logo-font-size: 30px;
+    }    
+}
+
+@media screen and (max-width: 380px) {
+    :root {
+        --logo-font-size: 25px;
+    }    
+}

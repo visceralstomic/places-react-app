@@ -21,6 +21,7 @@ const UserPage = props => {
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(2);
     const [totalPages, setTotalPages] = useState(0);
+    const [totalItems, setTotalItems] = useState(0);
 
 
     const getPagesArr = () => {
@@ -39,12 +40,16 @@ const UserPage = props => {
 
     const filteredList = useFilterList(placesList, sort, query, order);
 
-
+    const changeLimit = lim => {
+        setPage(1);
+        setLimit(lim);
+    }
 
     useEffect(() => {
         placeService
             .getAllPlaces(page, limit)
             .then(({places, generalNumberOfItems}) => {
+                setTotalItems(generalNumberOfItems);
                 setTotalPages(Math.ceil(generalNumberOfItems / limit)); 
                 setPlacesList(places);
                 setIsLoading(false);
@@ -91,7 +96,7 @@ const UserPage = props => {
                         setQuery={setQuery}
 
                         limit={limit}
-                        setLimit={setLimit}
+                        setLimit={changeLimit}
                     />
 
                     <Modal
@@ -108,7 +113,7 @@ const UserPage = props => {
                     ) : (
 
                         <div className="user-page-content">
-
+                                
                             <Pagination 
                                 page={page}
                                 pageArr={pagesArr}

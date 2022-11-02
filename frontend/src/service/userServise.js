@@ -2,8 +2,7 @@ import axiosInstance, {API_URL} from "./axiosInstance"
 import axios from "axios";
 
 const register = data => {
-    const req = axiosInstance.post('/user/register', data);
-    return req.then(resp => resp.data)
+    return axiosInstance.post('/user/register', data).then(response => response.data)
 }
 
 const login = data => {

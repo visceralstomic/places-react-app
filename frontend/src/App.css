@@ -407,6 +407,12 @@ body {
     gap: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .hello-container {
+        flex-direction: column;
+    }
+}
+
 
 .link {
     color: white;
@@ -427,6 +433,13 @@ body {
     padding: 50px 17% 0 40px;
 }
 
+@media screen and (max-width: 640px) {
+    .login {
+        margin-left: 0;
+        padding: 50px 35px;
+    }
+}
+
 
 /* ==================== */
 
@@ -440,7 +453,10 @@ body {
     background-color: var(--trans-white);
 }
 
-
+.not-found-title {
+    font-size: 45px;
+    font-weight: 700;
+}
 
 .form-control {
     margin-bottom: 20px;
@@ -460,3 +476,13 @@ body {
 .user-page-content {
     width: calc(100% - var(--places-form-cont-width));
 }
+
+@media screen and (max-width: 768px) {
+    .user-page {
+        flex-direction: column;
+    } 
+    .user-page-content {
+        width: 100%;
+    }
+}
+

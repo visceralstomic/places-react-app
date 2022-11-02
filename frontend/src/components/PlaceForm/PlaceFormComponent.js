@@ -74,6 +74,7 @@ const PlaceFormComponent = ({
 
                 })
                 .catch(error => {
+                    console.log(error)
                     const errorData = error.response.data.errors;
                     setFormErrorMessage(errorData.map(error =><div key={error}>{error}</div> ));
                     

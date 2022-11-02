@@ -40,3 +40,19 @@
     justify-content: space-between;
     margin-top: 20px;
 }
+
+
+@media  screen and (max-width: 640px) {
+    .place-header {
+        flex-direction: column-reverse;
+        gap: 20px
+    }
+
+    .place-info {
+        width: 100%;
+    }
+
+    .place-picture {
+        width: 100%;
+    }
+}
