@@ -19,7 +19,8 @@ export const privatRoutes = [
 
 
 export const publicRoutes = [
-    {path: '/', element: HelloPage, exact: true},
+    {path: '/', element: Redirect, exact: true},
+    {path: '/place', element: HelloPage, exact: true},
     {path: '/login', element: LoginPage, exact: true},
     {path: '*', element: NoFoundPage, exact: true}
 ]
