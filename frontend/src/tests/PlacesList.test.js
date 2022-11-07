@@ -1,16 +1,18 @@
 import { screen, render } from "@testing-library/react";
 import PlacesList from "../components/PlacesList/PlacesList";
-import {BrowserRouter} from "react-router-dom";
+import {MemoryRouter} from "react-router-dom";
 import {places} from "./blankData";
 
 
+const mockDelete = jest.fn();
+
 test('render PlaceList', () => {
-    const mockDelete = jest.fn();
+    
 
     const regPlaceName = new RegExp(places[0].name);
     const regPlaceLocation = new RegExp(places[1].location);
 
-    render(<BrowserRouter><PlacesList places={places} deleteItem={mockDelete} /></BrowserRouter>);
+    render(<MemoryRouter><PlacesList places={places} deleteItem={mockDelete} /></MemoryRouter>);
 
     expect(screen.getByText(regPlaceName)).toBeDefined();
     expect(screen.getByText(regPlaceLocation)).toBeDefined();
@@ -18,7 +20,6 @@ test('render PlaceList', () => {
 
 
 test('render PlaceList. Empty list', () => {
-    const mockDelete = jest.fn();
-    render(<BrowserRouter><PlacesList places={[]} deleteItem={mockDelete} /></BrowserRouter>);
+    render(<MemoryRouter><PlacesList places={[]} deleteItem={mockDelete} /></MemoryRouter>);
     expect(screen.getByText(/List is empty/i)).toBeDefined();
 })

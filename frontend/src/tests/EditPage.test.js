@@ -1,6 +1,5 @@
 import { screen, render } from "@testing-library/react";
 import EditPlaceForm from "../components/EditPlaceForm/EditPlaceForm";
-import EditPage from "../pages/EditPage";
 import {places} from "./blankData";
 
 
