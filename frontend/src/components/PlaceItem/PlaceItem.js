@@ -9,7 +9,7 @@ import "./placeItem.css";
 const PlaceItem = ({place, deleteItem}) => {
     const navigate = useNavigate();
     return (
-        <div className="place-item">
+        <div className="place-item" data-testid="place-id">
             <div className="place-header">
                 <div className="place-info">
                     <div>
